@@ -9,14 +9,17 @@ private:
 public:
     /**
      * Initialise le salaire horaire par défault en mettant à jour :
-     * - le cout de salaire horaire au barème
+     * @param salaire_horaire un entier qui représente le salaire/heure, il doit etre supérieur à 0.
+     * @return true si l'initialisation a bien eu lieu, false sinon.
      */
-    void initialisation_salaire_horaire(int salaire_horaire);
+    bool initialisation_salaire_horaire(int salaire_horaire);
 
     /**
-     * Initialise le nombre d'heure prestée à zéro.
+     * Initialise le nombre d'heure prestée.
+     * @param nbre_heure_prestee un entier qui représente le nombre d'heures prestees et doit etre supérieur ou égal à zero.
+     * @return true si l'initialisation a bien eu lieu, false sinon.
      */
-    void initialisation_heure_prestee(int nbre_heure_prestee);
+    bool initialisation_heure_prestee(int nbre_heure_prestee);
 
     /**
      * Getter qui récupère le salaire horaire de l'objet
