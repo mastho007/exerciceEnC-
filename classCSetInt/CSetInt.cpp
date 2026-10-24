@@ -125,13 +125,13 @@ CSetInt::Etat CSetInt::ajouterUnEntier(int entier)
 	// si l'entier existe déja ?
     if(entierExisteDeja(entier)){
         
-        return Etat::EXISTANT;
+        return EXISTANT;
     }
 
 	// si le tableau a atteint sa capacité max
 	if(atteintCapaciteMax()){
         
-        return Etat::COMPLET;
+        return COMPLET;
     }
 
 
