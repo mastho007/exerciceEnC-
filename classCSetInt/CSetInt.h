@@ -1,5 +1,7 @@
 
 
+
+
 class CSetInt
 {
 private:
@@ -14,9 +16,24 @@ public:
     // on déclare une variable de classe qui renseigne sur le nombre d'objet créé de cette classe
     static int nbreTotObjet;
 
+    /*pour les valeurs de retour de la fonction ajouterUnEntier() on utilise une enum
+    * Soit : EXISTANT   -> l'entier existe deja dans le tableau 
+             COMPLET    -> le tableau a atteint sa taille max 
+             VALIDE     -> l'entier a  bien été ajouté au tableau 
+    */
+    enum Etat{
+        EXISTANT,
+        COMPLET,
+        VALIDE
+    };
+
+
     // on déclare le constructeur par défault ou un constructeur en fonction de la taille du tableau de l'ensemble
     CSetInt();
     CSetInt(int tailleMax);
+    
+    //on déclare un constructeur par copie
+    CSetInt(const CSetInt &oCSetInt);
 
 
     ~CSetInt();
@@ -49,7 +66,7 @@ public:
      * @param entier l'entier à ajouter 
      * @return true 
      */
-    bool ajouterUnEntier(int entier);
+    Etat ajouterUnEntier(int entier);
 
 
     /**
@@ -58,3 +75,15 @@ public:
     static int getNbreTotObjet();
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
