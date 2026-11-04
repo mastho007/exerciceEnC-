@@ -10,3 +10,15 @@
 *.user
 *.userosscache
 *.sln.docstates
+
+# Dossiers de compilation Visual Studio
+/[Dd]ebug/
+/[Rr]elease/
+/x64/
+*.exe
+*.obj
+*.ilk
+*.pdb
+*.idb
+*.tlog
+*.log
