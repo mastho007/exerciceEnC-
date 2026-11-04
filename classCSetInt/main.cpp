@@ -2,7 +2,6 @@
 #include "CSetInt.h"
 #include <iostream>
 using namespace std;
-using enum CSetInt::Etat;
 
 
 void afficheStatObjet(const CSetInt &oSetInt, int numObjet) {
@@ -19,20 +18,20 @@ void afficheLetat(CSetInt::Etat ajoutEtat) {
 
 	switch(ajoutEtat) {
 
-	case EXISTANT:
+	case CSetInt::EXISTANT:
 
 		printf("Cet entier est deja dans l'ensemble d'entier.\n");
 		break;
 
 
-	case COMPLET:
+	case CSetInt::COMPLET:
 
 		printf("Cet ensemble est complet.\n");
 
 		break;
 
 
-	case VALIDE:
+	case CSetInt::VALIDE:
 
 		printf("L'entier a bien ete ajoute.\n");
 

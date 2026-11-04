@@ -1,7 +1,6 @@
 #include "CSetInt.h"
 #include <iostream>
 using namespace std;
-using enum CSetInt::Etat;
 
 // on initialise la variable statique à 0
 int CSetInt::nbreTotObjet = 0;
