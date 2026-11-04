@@ -1,0 +1,12 @@
+# Fichiers temporaires de Visual Studio
+.vs/
+[Oo]bj/
+[Bb]in/
+*.ipch
+*.db
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
