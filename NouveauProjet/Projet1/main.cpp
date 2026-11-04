@@ -6,10 +6,16 @@ using namespace std;
 
 int main()
 {
-    cout << "Utilisation de branche!"
-<<endl;
+	cout << "Utilisation de branche!"<< endl;
 
+
+	if (5 == 5)
+	{
+		return 0;
+	}
 }
+
+
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
 // Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
