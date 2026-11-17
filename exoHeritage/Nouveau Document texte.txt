@@ -1,0 +1,36 @@
+1) Précisez la liste des messages qui seront affichés suite à la déclaration suivante :
+CGeoShape oG1 ;
+
+voici l'output :
+
+CPoint c'tor
+CGeoShape c'tor: 1 arg
+
+CGeoShape d'tor
+CPoint d'tor
+
+
+
+
+
+2) Précisez la liste des messages qui seront affichés suite à la déclaration suivante :
+CRectangle oR2(10, 10, oP) ; 
+
+
+CPoint c'tor
+CGeoShape c'tor: 1 arg
+CRectangle c'tor: 3 arg (int, int, Pt)
+
+
+CRectangle d'tor
+CGeoShape d'tor
+CPoint d'tor
+
+
+
+
+
+
+
+
+
