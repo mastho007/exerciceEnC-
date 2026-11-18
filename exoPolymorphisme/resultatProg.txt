@@ -1,0 +1,39 @@
+Je suis un point
+ mes coordonnées sont : 3 5
+Je suis un point coloré 
+ mes coordonnées sont : 2 6
+ ma couleur est : 2
+-----------------------------
+Je suis un point coloré 
+ mes coordonnées sont : 2 6
+Je suis un point coloré 
+ mes coordonnées sont : 2 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
