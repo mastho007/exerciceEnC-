@@ -29,6 +29,17 @@ CPoint d'tor
 
 
 
+B. Que fera alors précisément l’instruction suivante :
+CPointCol (2, 3, 5) ;
+
+
+Appel du c'tor CPoint
+Appel du c'tor CPointCol
+
+
+
+
+
 
 
 
