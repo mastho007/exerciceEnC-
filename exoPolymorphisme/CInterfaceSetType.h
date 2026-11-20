@@ -5,10 +5,10 @@
 class CInterfaceSetType
 {
 private:
-    /* data */
+    /* pas de data c'est juste une interface */
 public:
-    CInterfaceSetType(/* args */);
-    ~CInterfaceSetType();
+    CInterfaceSetType();
+    virtual ~CInterfaceSetType();
 
     /**
      * Affiche l'objet sur base de la classe dérivée
@@ -16,8 +16,15 @@ public:
     virtual void Affiche()const ;
 
     /**
-     * 
+     * Alloue la place pour un objet du type
      */
-    virtual void Allocate();
+    virtual CInterfaceSetType * Allocate();
+
+
+    /**
+     * Retourne le type d'objet de l'objet actuel
+     */
+    virtual const char* Type();
+
 
 };

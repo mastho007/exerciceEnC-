@@ -3,20 +3,27 @@
 class CSetType : public CInterfaceSetType
 {
 private:
-    /* data */
+    CInterfaceSetType* m_tabPtr;
+    int m_cardinal;
 public:
-    CSetType(/* args */);
+    CSetType();
     ~CSetType();
+
+    /**
+     * On copie les éléments dans le nouveau tableau
+     */
+    CSetType(const CSetType& oACopier);
+
 
     /**
      * pour ajouter un nouvel élément à l’ensemble (elle devra s’assurer qu’il n’existe pas déjà)
      */
-    void Ajoute(CInterfaceSetType *);
+    void Ajoute(CInterfaceSetType * oAajouter);
 
     /**
-     * Appartient (CInterfaceSetType *) pour tester l’appartenance d’un élément à l’ensemble
+     * pour tester l’appartenance d’un élément à l’ensemble
      */
-    bool Appartient(CInterfaceSetType *);
+    bool Appartient(CInterfaceSetType * oAppartient);
 
     /**
      *  qui fournira le nombre d’éléments de l’ensemble
@@ -26,18 +33,10 @@ public:
     /**
      *
      *  qui affiche le contenu de l’objet
-     * @param le type de l'objet dont on veut connaitre tt les infos 
+     * @param le type de l'objet dont on veut connaitre tt les infos
      */
-    void Display(CInterfaceSetType* oAafficher);
+    void Display(CInterfaceSetType *oAafficher);
 
-    /**
-     * retrouver le type de l’objet passé en paramètre dans display()
-     */
-    CInterfaceSetType* Type();
-
-
-
-    
     /**
      * pour initialiser le mécanisme d’itération.
      */
@@ -49,7 +48,6 @@ type dérivé de CInterfaceSetType)
      */
     CInterfaceSetType *Suivant();
 
-    
     /**
      * pour préciser s’il existe encore un élément non examiné.
      */
