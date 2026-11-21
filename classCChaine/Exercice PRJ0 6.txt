@@ -1,0 +1,22 @@
+*** constructeur 2 argument
+*** constructeur 2 argument
+*** constructeur 1 argument
+*** constructeur par copie
+*** constructeur 1 argument
+*** constructeur par copie
+*** constructeur 0 argument
+*** constructeur 0 argument
+Points de coordonnées : 4 0 
+Points de coordonnées : 10 20 
+Points de coordonnées : 0 0 
+Points de coordonnées : 30 40 
+Points de coordonnées : 0 0 
+Points de coordonnées : 0 0 
+Destruction de l’objet 
+Destruction de l’objet 
+Destruction de l’objet 
+Destruction de l’objet 
+Destruction de l’objet 
+Destruction de l’objet 
+Destruction de l’objet 
+Destruction de l’objet 

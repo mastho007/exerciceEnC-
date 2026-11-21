@@ -1,0 +1,60 @@
+10.7.1. Exercices
+Exercice PRJ013 :Le polymorphisme
+Quel est le résultat du code ci-dessous ? 
+
+
+Je suis un point
+ mes coordonnées sont : 3 5
+Je suis un point coloré 
+ mes coordonnées sont : 8 6
+ ma couleur est : 2
+-----------------------------
+Je suis un point coloré 
+ mes coordonnées sont : 8 6
+Je suis un point coloré 
+ mes coordonnées sont : 8 6
+
+
+
+
+Exercice PRJ014 : Le polymorphisme
+Quels résultats produira ce programme : 
+
+Je suis un point 
+ mes coordonnées sont : 3 4
+Je suis un point coloré de couleur : 5
+ mes coordonnées sont : 5 9
+--------------------
+Je suis un point 
+ mes coordonnées sont : 3 4
+Je suis un point coloré de couleur : 5
+ mes coordonnées sont : 5 9
+--------------------
+Je suis un point coloré de couleur : 5
+ mes coordonnées sont : 5 9
+Je suis un point coloré de couleur : 5
+ mes coordonnées sont : 5 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
