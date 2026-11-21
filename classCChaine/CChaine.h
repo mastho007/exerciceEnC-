@@ -22,6 +22,20 @@ public:
     ~CChaine();
 
     
+    //ajout d'opérateur de convertion 
+    
+    //la chaine de characteres devient const 
+    operator const char* ();
+
+    //la chaine est true si elle contient '\0', false sinon
+    operator bool ();
+
+
+
+
+
+
+
 
 };
 
