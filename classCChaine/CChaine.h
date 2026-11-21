@@ -25,16 +25,13 @@ public:
     //ajout d'opérateur de convertion 
     
     //la chaine de characteres devient const 
-    operator const char* ();
+    operator const char* () const;
 
-    //la chaine est true si elle contient '\0', false sinon
-    operator bool ();
+    //si la chaine est non vide (si il n'y a pas '\0' en premiere position)
+    operator bool() const;
 
-
-
-
-
-
+    //conversion en int si on souhaite calculer la longueur de la chaine (sans le '\0')
+    operator int() const;
 
 
 };

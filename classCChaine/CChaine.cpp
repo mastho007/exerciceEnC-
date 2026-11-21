@@ -49,3 +49,24 @@ CChaine::~CChaine()
     // on supprime l'espace alloué pour le tableau de char
     delete[] m_chaine;
 }
+
+// la chaine de characteres devient const
+CChaine::operator const char *() const
+{
+
+    return m_chaine;
+}
+
+// si la chaine est non vide (si il n'y a pas '\0' en premiere position)
+CChaine::operator bool() const
+{
+
+    return strlen(m_chaine) > 0;
+}
+
+// conversion en int si on souhaite calculer la longueur de la chaine (sans le '\0')
+    CChaine::operator int() const
+{
+
+    return strlen(m_chaine);
+}
