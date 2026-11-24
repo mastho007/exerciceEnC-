@@ -1,0 +1,11 @@
+** appel int () pour le point 1 4
+dN = 2.75
+** appel int () pour le point 1 4
+lfZ1 = 2.75
+** appel int () pour le point 1 4
+lfZ2 = 1
+** appel int () pour le point 1 4
+$$ appel fct avec argument : 1
+
+
+
