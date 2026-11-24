@@ -3,8 +3,11 @@
 class CSetType : public CInterfaceSetType
 {
 private:
-    CInterfaceSetType* m_tabPtr;
+    //un tableau de pointeurs
+    CInterfaceSetType** m_tabPtr;
     int m_cardinal;
+    int m_capacite;
+    int m_index;
 public:
     CSetType();
     ~CSetType();
@@ -23,7 +26,7 @@ public:
     /**
      * pour tester l’appartenance d’un élément à l’ensemble
      */
-    bool Appartient(CInterfaceSetType * oAppartient);
+    bool Appartient(CInterfaceSetType * oAppartient) const;
 
     /**
      *  qui fournira le nombre d’éléments de l’ensemble
