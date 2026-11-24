@@ -113,6 +113,12 @@ int main()
 	}
 
 
+	cout << "--- 1. Test des operateurs de conversion. ---" << endl;
+
+	cout << "	L'ensemble contient " << (int)oSetInt << " element." << endl;
+
+	cout << "	Est ce que l'ensemble contient au moins un element ? -> " << boolalpha << (bool)oSetInt << endl;
+
 
 
 

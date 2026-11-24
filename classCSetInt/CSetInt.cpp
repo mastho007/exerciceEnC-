@@ -148,3 +148,17 @@ int CSetInt::getNbreTotObjet() {
 
 	return nbreTotObjet;
 }
+
+
+
+    // on revoie le cardinal
+    CSetInt::operator int() const{
+
+		return m_cardinal;
+	}
+
+    // revoie true si l'ensemble contient au moins un élément
+    CSetInt::operator bool() const{
+
+		return m_cardinal > 0;
+	}

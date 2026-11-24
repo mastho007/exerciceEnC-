@@ -1,7 +1,5 @@
 
 
-
-
 class CSetInt
 {
 private:
@@ -17,31 +15,30 @@ public:
     static int nbreTotObjet;
 
     /*pour les valeurs de retour de la fonction ajouterUnEntier() on utilise une enum
-    * Soit : EXISTANT   -> l'entier existe deja dans le tableau 
-             COMPLET    -> le tableau a atteint sa taille max 
-             VALIDE     -> l'entier a  bien été ajouté au tableau 
+    * Soit : EXISTANT   -> l'entier existe deja dans le tableau
+             COMPLET    -> le tableau a atteint sa taille max
+             VALIDE     -> l'entier a  bien été ajouté au tableau
     */
-    enum Etat{
+    enum Etat
+    {
         EXISTANT,
         COMPLET,
         VALIDE
     };
 
-
     // on déclare le constructeur par défault ou un constructeur en fonction de la taille du tableau de l'ensemble
     CSetInt();
     CSetInt(int tailleMax);
-    
-    //on déclare un constructeur par copie
-    CSetInt(const CSetInt &oCSetInt);
 
+    // on déclare un constructeur par copie
+    CSetInt(const CSetInt &oCSetInt);
 
     ~CSetInt();
 
     /**
-     * Récupère le nombre d'entier que contient le tableau 
+     * Récupère le nombre d'entier que contient le tableau
      */
-    int getCardinal()const ;
+    int getCardinal() const;
 
     /**
      * Récupère la taille maximale du tableau d'entier
@@ -63,27 +60,25 @@ public:
 
     /**
      * Ajoute un entier au tableau d'entier si les 2 conditions on été vérifiées précédemment(nouvel entier et il reste de la place dans le tableau)
-     * @param entier l'entier à ajouter 
-     * @return true 
+     * @param entier l'entier à ajouter
+     * @return true
      */
     Etat ajouterUnEntier(int entier);
-
 
     /**
      * Récupère le nombre d'objet créé par cette classe via la variable de classe nbreTotObjet
      */
     static int getNbreTotObjet();
 
+    // Ajout des opérateurs de conversion pour CSetInt
+
+    // on revoie le cardinal
+    operator int() const;
+
+    // revoie true si l'ensemble contient au moins un élément
+    operator bool() const;
+
+
+
+
 };
-
-
-
-
-
-
-
-
-
-
-
-
