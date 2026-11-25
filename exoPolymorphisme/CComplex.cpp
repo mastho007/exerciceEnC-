@@ -58,8 +58,26 @@ CInterfaceSetType *CComplex::Allocate()
 /**
  * Retourne le type d'objet de l'objet actuel
  */
-const char *CComplex::Type()
+const char *CComplex::Type() const
 {
 
 	return "CComplex";
 }
+
+
+bool CComplex::EstEgal(const CInterfaceSetType * oAComparer) const{
+
+	if(oAComparer == nullptr){
+		return false;
+	}
+
+	//on cast de facon dynamique 
+	const CComplex* complex = dynamic_cast<const CComplex*>(oAComparer);
+
+	if(complex == nullptr){
+		return nullptr;
+	}else{
+		return m_lfReel == complex->m_lfReel && m_lfImag == complex->m_lfImag;
+	}
+
+    }

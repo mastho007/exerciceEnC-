@@ -88,11 +88,11 @@ void CPoint::print() const
 	printf("Voici les coordonnees du point :\nX : %d\nY : %d\nZ : %d\n", m_X, m_Y, m_Z);
 }
 
-
 /**
  * Affiche l'objet sur base de la classe dérivée
  */
-void CPoint::Affiche() const{
+void CPoint::Affiche() const
+{
 
 	print();
 }
@@ -100,10 +100,11 @@ void CPoint::Affiche() const{
 /**
  * Alloue la place pour un objet du type
  */
-CInterfaceSetType * CPoint::Allocate(){
+CInterfaceSetType *CPoint::Allocate()
+{
 
-	//on créé un nouveau ptr qui contient l'adresse de l'objet CPoint actuel
-	CPoint* ptrPoint = new CPoint(*this);
+	// on créé un nouveau ptr qui contient l'adresse de l'objet CPoint actuel
+	CPoint *ptrPoint = new CPoint(*this);
 
 	return ptrPoint;
 }
@@ -111,7 +112,27 @@ CInterfaceSetType * CPoint::Allocate(){
 /**
  * Retourne le type d'objet de l'objet actuel
  */
-const char* CPoint::Type(){
+const char *CPoint::Type() const
+{
 
 	return "CPoint";
 }
+
+
+
+bool CPoint::EstEgal(const CInterfaceSetType * oAComparer) const{
+
+	if(oAComparer == nullptr){
+		return false;
+	}
+
+	//on cast de facon dynamique 
+	const CPoint* point = dynamic_cast<const CPoint*>(oAComparer);
+
+	if(point == nullptr){
+		return nullptr;
+	}else{
+		return m_X == point->getX() && m_Y == point->getY() && m_Z == point->getZ();
+	}
+
+    }

@@ -1,6 +1,6 @@
 #include "CInterfaceSetType.h"
 
-class CSetType : public CInterfaceSetType
+class CSetType
 {
 private:
     //un tableau de pointeurs
@@ -26,7 +26,7 @@ public:
     /**
      * pour tester l’appartenance d’un élément à l’ensemble
      */
-    bool Appartient(CInterfaceSetType * oAppartient) const;
+    bool Appartient(const CInterfaceSetType * oAppartient) const;
 
     /**
      *  qui fournira le nombre d’éléments de l’ensemble
@@ -38,7 +38,7 @@ public:
      *  qui affiche le contenu de l’objet
      * @param le type de l'objet dont on veut connaitre tt les infos
      */
-    void Display(CInterfaceSetType *oAafficher);
+    void Display(const CInterfaceSetType *oAafficher) const;
 
     /**
      * pour initialiser le mécanisme d’itération.
@@ -54,7 +54,7 @@ type dérivé de CInterfaceSetType)
     /**
      * pour préciser s’il existe encore un élément non examiné.
      */
-    bool Existe();
+    bool Existe() const;
 
 
 };

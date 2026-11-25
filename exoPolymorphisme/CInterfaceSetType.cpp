@@ -28,7 +28,13 @@
     /**
      * Retourne le type d'objet de l'objet actuel
      */
-    const char* CInterfaceSetType::Type(){
+    const char* CInterfaceSetType::Type() const{
 
 
     }
+
+    bool CInterfaceSetType::EstEgal(const CInterfaceSetType * oAComparer) const{
+
+
+    }
+    

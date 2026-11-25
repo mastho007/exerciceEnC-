@@ -3,32 +3,35 @@
 class CComplex : public CInterfaceSetType
 {
 private:
-	float m_lfReel, m_lfImag;
+    float m_lfReel, m_lfImag;
 
 public:
-	CComplex(float r = 0, float i = 0);
+    CComplex(float r = 0, float i = 0);
 
-	~CComplex();
+    ~CComplex();
 
-	CComplex operator=(CComplex);
-	CComplex operator+(CComplex);
+    CComplex operator=(CComplex);
+    CComplex operator+(CComplex);
 
-	
     /**
      * Affiche l'objet sur base de la classe dérivée
      */
-    virtual void Affiche()const ;
+    virtual void Affiche() const;
 
     /**
      * Alloue la place pour un objet du type
      */
-    virtual CInterfaceSetType * Allocate();
-
+    virtual CInterfaceSetType *Allocate();
 
     /**
      * Retourne le type d'objet de l'objet actuel
      */
-    virtual const char* Type();
+    virtual const char *Type() const;
+
+
+
+    virtual bool EstEgal(const CInterfaceSetType * oAComparer) const;
+
 
 
 };

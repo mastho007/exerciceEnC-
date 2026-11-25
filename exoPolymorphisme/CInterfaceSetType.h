@@ -24,7 +24,9 @@ public:
     /**
      * Retourne le type d'objet de l'objet actuel
      */
-    virtual const char* Type();
+    virtual const char* Type() const;
+
+    virtual bool EstEgal(const CInterfaceSetType * oAComparer) const;
 
 
 };
