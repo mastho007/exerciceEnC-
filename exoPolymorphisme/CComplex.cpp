@@ -16,19 +16,19 @@ CComplex::~CComplex()
 	cout << "Appel du d'tor CComplex." << endl;
 }
 
-CComplex CComplex::operator=(CComplex oCplx)
+CComplex& CComplex::operator=(const CComplex& oComplex)
 {
-	m_lfReel = oCplx.m_lfReel;
-	m_lfImag = oCplx.m_lfImag;
+	m_lfReel = oComplex.m_lfReel;
+	m_lfImag = oComplex.m_lfImag;
 
 	return *this;
 }
 
-CComplex CComplex::operator+(CComplex Ocplx)
+CComplex CComplex::operator+(const CComplex& oComplex)
 {
 	CComplex oTemp;
-	oTemp.m_lfReel = m_lfReel + Ocplx.m_lfReel;
-	oTemp.m_lfImag = m_lfImag + Ocplx.m_lfImag;
+	oTemp.m_lfReel = m_lfReel + oComplex.m_lfReel;
+	oTemp.m_lfImag = m_lfImag + oComplex.m_lfImag;
 	return oTemp;
 }
 
@@ -46,7 +46,7 @@ void CComplex::Affiche() const
 /**
  * Alloue la place pour un objet du type
  */
-CInterfaceSetType *CComplex::Allocate()
+CInterfaceSetType *CComplex::Allocate() const
 {
 
 	// on créé un nouveau ptr qui contient l'adresse de l'objet CPoint actuel
@@ -75,7 +75,7 @@ bool CComplex::EstEgal(const CInterfaceSetType * oAComparer) const{
 	const CComplex* complex = dynamic_cast<const CComplex*>(oAComparer);
 
 	if(complex == nullptr){
-		return nullptr;
+		return false;
 	}else{
 		return m_lfReel == complex->m_lfReel && m_lfImag == complex->m_lfImag;
 	}

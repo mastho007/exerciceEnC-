@@ -10,8 +10,8 @@ public:
 
     ~CComplex();
 
-    CComplex operator=(CComplex);
-    CComplex operator+(CComplex);
+    CComplex& operator=(const CComplex& oComplex);
+    CComplex operator+(const CComplex& oComplex);
 
     /**
      * Affiche l'objet sur base de la classe dérivée
@@ -21,7 +21,7 @@ public:
     /**
      * Alloue la place pour un objet du type
      */
-    virtual CInterfaceSetType *Allocate();
+    virtual CInterfaceSetType *Allocate() const;
 
     /**
      * Retourne le type d'objet de l'objet actuel

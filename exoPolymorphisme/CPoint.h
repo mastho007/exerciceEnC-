@@ -13,6 +13,9 @@ public:
     // un c'tor par défault
     CPoint();
 
+    // un c'tor 3 paramètres
+    CPoint(int x, int y, int z);
+
     // un c'tor par copie
     CPoint(const CPoint &oCPoint);
 
@@ -61,7 +64,7 @@ public:
     /**
      * Alloue la place pour un objet du type
      */
-    virtual CInterfaceSetType *Allocate();
+    virtual CInterfaceSetType *Allocate() const;
 
     /**
      * Retourne le type d'objet de l'objet actuel

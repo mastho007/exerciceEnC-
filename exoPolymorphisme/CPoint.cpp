@@ -13,6 +13,12 @@ CPoint::CPoint()
 	cout << "Appel du constructeur par default CPoint.\n";
 }
 
+CPoint::CPoint(int x, int y, int z) : m_X(x), m_Y(y), m_Z(z){
+
+	cout << "Appel du constructeur 3 parametres CPoint.\n";
+}
+
+
 CPoint::CPoint(const CPoint &oCPoint)
 {
 
@@ -100,7 +106,7 @@ void CPoint::Affiche() const
 /**
  * Alloue la place pour un objet du type
  */
-CInterfaceSetType *CPoint::Allocate()
+CInterfaceSetType *CPoint::Allocate() const
 {
 
 	// on créé un nouveau ptr qui contient l'adresse de l'objet CPoint actuel
@@ -130,7 +136,7 @@ bool CPoint::EstEgal(const CInterfaceSetType * oAComparer) const{
 	const CPoint* point = dynamic_cast<const CPoint*>(oAComparer);
 
 	if(point == nullptr){
-		return nullptr;
+		return false;
 	}else{
 		return m_X == point->getX() && m_Y == point->getY() && m_Z == point->getZ();
 	}
