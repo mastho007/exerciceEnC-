@@ -38,39 +38,37 @@ CSetInt::CSetInt(int tailleMax)
 CSetInt::~CSetInt()
 {
 
-    cout<<"Destruction de l'objet.\n";
-    //on désincrémente le compteur d'objet lors de sa suppression
-    nbreTotObjet--;
-    
+	cout << "Destruction de l'objet.\n";
+	// on désincrémente le compteur d'objet lors de sa suppression
+	nbreTotObjet--;
+
 	// on supprime l'espace mémoire donné au pointeur du tableau contenant les entiers
 	delete[] m_ptrTab;
 }
 
+CSetInt::CSetInt(const CSetInt &oCSetInt)
+{
 
-CSetInt::CSetInt(const CSetInt &oCSetInt){
-    
-    //on place les données membre dans l'objet en paramètre 
-    m_cardinal = oCSetInt.m_cardinal;
-    
-    m_tailleMax = oCSetInt.m_tailleMax;
-    
-    //on créé un nouvel espace pour la mémoire dynamique
-    m_ptrTab = new int[m_tailleMax];
-    
-    //on copie dans le nouveau tableau les valeurs du tableau précédent 
-    for(int i = 0; i< m_cardinal; i++){
-        
-        m_ptrTab[i] = oCSetInt.m_ptrTab[i];
-    }
-    
-    //on incrémente le nombre d'objet
-    nbreTotObjet++;
-    
-    cout<< "Appel du constructeur par copie.\n";
+	// on place les données membre dans l'objet en paramètre
+	m_cardinal = oCSetInt.m_cardinal;
+
+	m_tailleMax = oCSetInt.m_tailleMax;
+
+	// on créé un nouvel espace pour la mémoire dynamique
+	m_ptrTab = new int[m_tailleMax];
+
+	// on copie dans le nouveau tableau les valeurs du tableau précédent
+	for (int i = 0; i < m_cardinal; i++)
+	{
+
+		m_ptrTab[i] = oCSetInt.m_ptrTab[i];
+	}
+
+	// on incrémente le nombre d'objet
+	nbreTotObjet++;
+
+	cout << "Appel du constructeur par copie.\n";
 }
-
-
-
 
 int CSetInt::getCardinal() const
 {
@@ -83,8 +81,6 @@ int CSetInt::getTailleMax() const
 
 	return m_tailleMax;
 }
-
-
 
 bool CSetInt::entierExisteDeja(int entier) const
 {
@@ -122,43 +118,64 @@ CSetInt::Etat CSetInt::ajouterUnEntier(int entier)
 	// peut être vérif de la validité de l'entier ?
 
 	// si l'entier existe déja ?
-    if(entierExisteDeja(entier)){
-        
-        return EXISTANT;
-    }
+	if (entierExisteDeja(entier))
+	{
+
+		return EXISTANT;
+	}
 
 	// si le tableau a atteint sa capacité max
-	if(atteintCapaciteMax()){
-        
-        return COMPLET;
-    }
+	if (atteintCapaciteMax())
+	{
 
+		return COMPLET;
+	}
 
-		// on insère l'entier dans la
-		m_ptrTab[m_cardinal] = entier;
+	// on insère l'entier dans la
+	m_ptrTab[m_cardinal] = entier;
 
-		m_cardinal++;
+	m_cardinal++;
 
-        return VALIDE;	
-
+	return VALIDE;
 }
 
-
-int CSetInt::getNbreTotObjet() {
+int CSetInt::getNbreTotObjet()
+{
 
 	return nbreTotObjet;
 }
 
 
+//------------------------------------------------
+// Implémentation des Opérateurs de conversion
+//------------------------------------------------
 
-    // on revoie le cardinal
-    CSetInt::operator int() const{
+CSetInt::operator int() const
+{
 
-		return m_cardinal;
-	}
+	return m_cardinal;
+}
 
-    // revoie true si l'ensemble contient au moins un élément
-    CSetInt::operator bool() const{
+CSetInt::operator bool() const
+{
 
-		return m_cardinal > 0;
-	}
+	return m_cardinal > 0;
+}
+
+//------------------------------------------------
+// Implémentation pour les opérateurs < et []
+//------------------------------------------------
+
+CSetInt &CSetInt::operator<(int entierAajouter)
+{
+
+	ajouterUnEntier(entierAajouter);
+
+	return *this;
+}
+
+int CSetInt::operator[](int dValeur) const
+{
+
+	return entierExisteDeja(dValeur);
+}
